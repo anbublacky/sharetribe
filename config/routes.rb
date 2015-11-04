@@ -1,5 +1,7 @@
 Kassi::Application.routes.draw do
 
+  post '/rate' => 'rater#create', :as => 'rate'
+
   namespace :mercury do
     resources :images
   end

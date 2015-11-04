@@ -17,6 +17,14 @@ GIT
     paypal-sdk-permissions (1.96.3)
       paypal-sdk-core (~> 0.3.0)
 
+GIT
+  remote: https://github.com/wazery/ratyrate.git
+  revision: c42c52f1cf26e8b488367aa78a6b94d46229abd1
+  branch: master
+  tag: v1.0.9
+  specs:
+    ratyrate (1.2.2.alpha)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -588,6 +596,7 @@ DEPENDENCIES
   rails (= 3.2.21)
   rails-i18n
   rake
+  ratyrate!
   rb-fsevent
   recaptcha
   rest-client (>= 1.6.0)
@@ -611,6 +620,3 @@ DEPENDENCIES
   will_paginate
   xpath
   zeus (= 0.15.1)
-
-BUNDLED WITH
-   1.10.6

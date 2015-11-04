@@ -46,6 +46,7 @@
 #  pickup_enabled                  :boolean          default(FALSE)
 #  shipping_price_cents            :integer
 #  shipping_price_additional_cents :integer
+#  rate                            :string(255)
 #
 # Indexes
 #
@@ -88,6 +89,8 @@ class Listing < ActiveRecord::Base
   monetize :price_cents, :allow_nil => true, with_model_currency: :currency
   monetize :shipping_price_cents, allow_nil: true, with_model_currency: :currency
   monetize :shipping_price_additional_cents, allow_nil: true, with_model_currency: :currency
+
+  ratyrate_rateable "price"
 
   # Create an "empty" relationship. This is needed in search when we want to stop the search chain (NumericFields)
   # and just return empty result.

@@ -113,6 +113,8 @@ class Person < ActiveRecord::Base
 
   has_and_belongs_to_many :followed_listings, :class_name => "Listing", :join_table => "listing_followers"
 
+  ratyrate_rater
+  
   def to_param
     username
   end
