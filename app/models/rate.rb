@@ -22,5 +22,5 @@ class Rate < ActiveRecord::Base
   belongs_to :rateable, :polymorphic => true
 
   #attr_accessible :rate, :dimension
-
+  # self.primary_key = "rater_id"
 end

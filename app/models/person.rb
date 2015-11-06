@@ -113,8 +113,8 @@ class Person < ActiveRecord::Base
 
   has_and_belongs_to_many :followed_listings, :class_name => "Listing", :join_table => "listing_followers"
 
-  ratyrate_rater
-  
+  letsrate_rater
+
   def to_param
     username
   end
@@ -182,7 +182,7 @@ class Person < ActiveRecord::Base
                                       "image/pjpeg", "image/x-png"] #the two last types are sent by IE.
 
   before_validation(:on => :create) do
-    self.id = UUID.timestamp_create.to_s22
+    self.id = UUID.timestamp_create.to_i.to_s
     set_default_preferences unless self.preferences
   end
 

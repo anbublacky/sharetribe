@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20151104122215) do
   add_index "auth_tokens", ["token"], :name => "index_auth_tokens_on_token", :unique => true
 
   create_table "average_caches", :force => true do |t|
-    t.integer  "rater_id"
+    t.string  "rater_id"
     t.integer  "rateable_id"
     t.string   "rateable_type"
     t.float    "avg",           :null => false
@@ -862,7 +862,7 @@ ActiveRecord::Schema.define(:version => 20151104122215) do
   add_index "paypal_tokens", ["transaction_id"], :name => "index_paypal_tokens_on_transaction_id"
 
   create_table "people", :id => false, :force => true do |t|
-    t.string   "id",                                 :limit => 22,                    :null => false
+    t.string   "id",                                 :limit => 39,                    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "is_admin",                                         :default => 0
@@ -916,7 +916,7 @@ ActiveRecord::Schema.define(:version => 20151104122215) do
   end
 
   create_table "rates", :force => true do |t|
-    t.integer  "rater_id"
+    t.string  "rater_id"
     t.integer  "rateable_id"
     t.string   "rateable_type"
     t.float    "stars",         :null => false
@@ -926,7 +926,7 @@ ActiveRecord::Schema.define(:version => 20151104122215) do
   end
 
   add_index "rates", ["rateable_id", "rateable_type"], :name => "index_rates_on_rateable_id_and_rateable_type"
-  add_index "rates", ["rater_id"], :name => "index_rates_on_rater_id"
+  # add_index "rates", ["rater_id"], :name => "index_rates_on_rater_id"
 
   create_table "rating_caches", :force => true do |t|
     t.integer  "cacheable_id"

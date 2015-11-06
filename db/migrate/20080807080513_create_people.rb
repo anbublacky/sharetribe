@@ -2,7 +2,7 @@ class CreatePeople < ActiveRecord::Migration
   
   def self.up
     create_table :people, :id => false do |t|
-      t.string :id, :limit => 22, :null => false
+      t.string :id, :limit => 39, :null => false
       t.integer :coin_amount, :null => false, :default => 0
       t.timestamps
     end

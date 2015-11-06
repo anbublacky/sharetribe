@@ -17,14 +17,6 @@ GIT
     paypal-sdk-permissions (1.96.3)
       paypal-sdk-core (~> 0.3.0)
 
-GIT
-  remote: https://github.com/wazery/ratyrate.git
-  revision: c42c52f1cf26e8b488367aa78a6b94d46229abd1
-  branch: master
-  tag: v1.0.9
-  specs:
-    ratyrate (1.2.2.alpha)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -255,6 +247,7 @@ GEM
     kgio (2.8.1)
     launchy (2.1.2)
       addressable (~> 2.3)
+    letsrate (1.0.8)
     librato-metrics (1.5.1)
       aggregate (~> 0.2.2)
       faraday (~> 0.7)
@@ -448,6 +441,8 @@ GEM
     ruby-prof (0.14.2)
     ruby-progressbar (1.4.2)
     rubyzip (1.1.7)
+    safe_attributes (1.0.10)
+      activerecord (>= 3.0.0)
     sass (3.2.19)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -563,6 +558,7 @@ DEPENDENCIES
   jwt (~> 1.5.1)
   kgio (~> 2.8.0)
   launchy
+  letsrate (~> 1.0.8)
   librato-rails
   lograge
   mail_view (~> 1.0.3)
@@ -596,13 +592,13 @@ DEPENDENCIES
   rails (= 3.2.21)
   rails-i18n
   rake
-  ratyrate!
   rb-fsevent
   recaptcha
   rest-client (>= 1.6.0)
   rspec-rails (~> 2.99.0)
   rubocop
   ruby-prof
+  safe_attributes
   sass (~> 3.2.9)
   sass-rails
   selenium-webdriver

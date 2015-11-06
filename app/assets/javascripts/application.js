@@ -71,4 +71,6 @@
 //= require paypal_account_settings
 //= require transaction
 //= require listing_form
+//= require jquery.raty
+//= require letsrate
 //= require_self
