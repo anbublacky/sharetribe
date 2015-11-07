@@ -121,6 +121,12 @@ group :development do
   gem 'i18n-tasks', '~> 0.6.2'
   gem 'quiet_assets'
   gem 'better_errors'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rails-console'
+  gem 'capistrano-rvm'
+  gem 'capistrano-sidekiq'
 end
 
 group :test do
