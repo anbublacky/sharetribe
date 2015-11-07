@@ -114,7 +114,7 @@ class Person < ActiveRecord::Base
   has_and_belongs_to_many :followed_listings, :class_name => "Listing", :join_table => "listing_followers"
 
   letsrate_rater
-
+  letsrate_rateable "username"
   def to_param
     username
   end

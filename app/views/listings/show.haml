@@ -74,9 +74,15 @@
         - if @listing.rate_average
           %h1
             - rate = Rate.where(rateable_id: @listing.id, rateable_type: 'Listing', dimension: 'rate')
-            = "#{@listing.rate_average.avg} (#{rate.count})"
-        - if logged_in?    
-          = rating_for @listing, "rate"
+            = "Total Rating : #{@listing.rate_average.avg} stars "
+          %p
+            = "from #{rate.count} users"
+          %br
+        - if logged_in?
+          %p
+            = "Your Rating : "
+            = rating_for @listing, "rate"
+            / = rating_for_user @listing, "rate"
 
     - @listing.custom_field_values.each do |custom_field_value|
       .row

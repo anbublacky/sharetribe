@@ -67,6 +67,11 @@
     .row
       .people-image
         = huge_avatar_thumb(@person)
+        = rating_for @current_user, "username"
+        - if @current_user.username_average
+          %h1
+            - rate = Rate.where(rateable_id: @current_user.id, rateable_type: 'Person', dimension: 'username')
+            = "Total Rating : #{@current_user.username_average.avg} stars "
 
     .row
       .profile-action-buttons-desktop

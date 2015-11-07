@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20151104122215) do
 
   create_table "average_caches", :force => true do |t|
     t.string  "rater_id"
-    t.integer  "rateable_id"
+    t.string  "rateable_id"
     t.string   "rateable_type"
     t.float    "avg",           :null => false
     t.datetime "created_at",    :null => false
@@ -674,7 +674,7 @@ ActiveRecord::Schema.define(:version => 20151104122215) do
   end
 
   create_table "overall_averages", :force => true do |t|
-    t.integer  "rateable_id"
+    t.string  "rateable_id"
     t.string   "rateable_type"
     t.float    "overall_avg",   :null => false
     t.datetime "created_at",    :null => false
@@ -917,7 +917,7 @@ ActiveRecord::Schema.define(:version => 20151104122215) do
 
   create_table "rates", :force => true do |t|
     t.string  "rater_id"
-    t.integer  "rateable_id"
+    t.string  "rateable_id"
     t.string   "rateable_type"
     t.float    "stars",         :null => false
     t.string   "dimension"
@@ -929,7 +929,7 @@ ActiveRecord::Schema.define(:version => 20151104122215) do
   # add_index "rates", ["rater_id"], :name => "index_rates_on_rater_id"
 
   create_table "rating_caches", :force => true do |t|
-    t.integer  "cacheable_id"
+    t.string  "cacheable_id"
     t.string   "cacheable_type"
     t.float    "avg",            :null => false
     t.integer  "qty",            :null => false

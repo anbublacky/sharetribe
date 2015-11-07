@@ -3,7 +3,7 @@ class CreateRates < ActiveRecord::Migration
   def self.up
       create_table :rates do |t|
         t.string :rater_id
-        t.belongs_to :rateable, :polymorphic => true
+        t.string :rateable, :polymorphic => true
         t.float :stars, :null => false
         t.string :dimension
         t.timestamps
