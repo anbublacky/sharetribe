@@ -581,6 +581,7 @@ DEPENDENCIES
   devise-encryptable
   dynamic_form
   email_spec
+  execjs
   factory_girl_rails
   fb-channel-file
   flying-sphinx (~> 1.2.0)

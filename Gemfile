@@ -71,6 +71,7 @@ gem "omniauth-facebook", "~> 2.0.1"
 gem 'spreadsheet'
 gem 'rabl'
 gem 'rake'
+gem 'execjs'
 gem 'xpath'
 gem 'dynamic_form'
 gem "truncate_html"
