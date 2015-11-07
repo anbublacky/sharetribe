@@ -14,7 +14,7 @@ $(function(){
       readOnly: $readonly,
       click: function(score, evt) {
         var _this = this;
-        $.post('<%= Rails.application.class.routes.url_helpers.rate_path %>',
+        $.post('/rate',
         {
           score: score,
           dimension: $(this).attr('data-dimension'),
