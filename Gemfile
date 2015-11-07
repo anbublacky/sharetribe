@@ -72,6 +72,7 @@ gem 'spreadsheet'
 gem 'rabl'
 gem 'rake'
 gem 'execjs'
+gem 'unicorn'
 gem 'xpath'
 gem 'dynamic_form'
 gem "truncate_html"
