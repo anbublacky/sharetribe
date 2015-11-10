@@ -74,15 +74,21 @@
         - if @listing.rate_average
           %h1
             - rate = Rate.where(rateable_id: @listing.id, rateable_type: 'Listing', dimension: 'rate')
-            = "Total Rating : #{@listing.rate_average.avg} stars "
+            = "Total Rating :"
+
+          = content_tag :div, '', :style => "background-image:url('#{image_path('big-star.png')}');width:81px;height:81px;margin-top:10px;float: left;" do
+            = content_tag :p, @listing.rate_average.avg, :style => "position:relative;line-height:85px;text-align:center;"
+          = content_tag :span, " from #{rate.count} reviews", :style => "position:relative;margin-top:58px;text-align:center; float:left;"
           %p
-            = "from #{rate.count} users"
+          %br
+          %br
+          %br
           %br
         - if logged_in?
           %p
             = "Your Rating : "
-            = rating_for @listing, "rate"
-            / = rating_for_user @listing, "rate"
+            / = rating_for @listing, "rate"
+            = rating_for_user @listing, @current_user, "rate"
 
     - @listing.custom_field_values.each do |custom_field_value|
       .row
