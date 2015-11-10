@@ -67,11 +67,12 @@
     .row
       .people-image
         = huge_avatar_thumb(@person)
-        - if @current_user.username_average
-          - rate = Rate.where(rateable_id: @current_user.id, rateable_type: 'Person', dimension: 'username')
+        - @person = Person.find(params[:person_id] || params[:id])
+        - if @person.username_average
+          - rate = Rate.where(rateable_id: @person.id, rateable_type: 'Person', dimension: 'username')
           / = "Total Rating : #{@current_user.username_average.avg} stars "
           = content_tag :div, '', :style => "background-image:url('#{image_path('big-star.png')}');width:81px;height:81px;margin-top:10px;float: left;" do
-            = content_tag :p, @current_user.username_average.avg, :style => "position:relative;line-height:85px;text-align:center;"
+            = content_tag :p, @person.username_average.avg, :style => "position:relative;line-height:85px;text-align:center;"
           = content_tag :span, " from #{rate.count} reviews", :style => "position:relative;margin-top:58px;text-align:center; float:left;"
           %p
           %br
@@ -79,7 +80,6 @@
           %br
           %br
         - if logged_in?
-          - @person = Person.find(params[:person_id] || params[:id])
           - unless @current_user.username == @person.username
             = "Your Rating: "
             = rating_for_user @person, @current_user, "username"
