@@ -1,0 +1,8 @@
+/ = listing.inspect
+- if listing.rate_average
+  %h1
+    - rate = Rate.where(rateable_id: listing.id, rateable_type: 'Listing', dimension: 'rate')
+    = "Total Rating :"
+  = content_tag :div, "", "data-dimension" => "rate", :class => "star disable-star", "data-rating" => listing.rate_average.avg, "data-id" => listing.id, "data-classname" => "Listing", "data-star-count" => 5
+  %span.no_of_reviews
+  = " from #{rate.count} reviews"

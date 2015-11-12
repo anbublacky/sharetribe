@@ -24,12 +24,11 @@ $(function(){
         function(data) {
           if(data) {
             // success code goes here ...
-
             if ($(_this).attr('data-disable-after-rate') == 'true') {
               $(_this).raty('set', { readOnly: true, score: score });
             }
           }
-        });
+        }, "script");
       }
     });
   });

@@ -4,3 +4,12 @@
 	height:81px;
 	margin-top:10px;
 }
+.disable-star {
+	pointer-events: none;
+	width: 120px !important;
+	float: left;
+}
+.no_of_reviews {
+	font-weight: normal;
+	font-size: 14px;
+}

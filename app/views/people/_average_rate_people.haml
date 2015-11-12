@@ -1,0 +1,7 @@
+- if person.username_average
+  %h1
+    - rate = Rate.where(rateable_id: person.id, rateable_type: 'Person', dimension: 'username')
+    = "Total Rating :"
+  = content_tag :div, "", "data-dimension" => "rate", :class => "star disable-star", "data-rating" => person.username_average.avg, "data-id" => person.id, "data-classname" => "Listing", "data-star-count" => 5
+  %span.no_of_reviews
+  = " from #{rate.count} reviews"

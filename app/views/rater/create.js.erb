@@ -1,0 +1,10 @@
+
+<% if @object.class.to_s == "Person" %>
+	$("#average_rating").html("<%= escape_javascript(render partial: 'people/average_rate_people', locals: { person: @object } ).html_safe %>");
+	$('.disable-star').raty();
+	$('.disable-star').raty('score', <%= @object.username_average.avg %>);
+<% else %>
+	$("#average_rating").html("<%= escape_javascript(render partial: 'listings/rate_listing', locals: { listing: @object } ).html_safe %>");
+	$('.disable-star').raty();
+	$('.disable-star').raty('score', <%= @object.rate_average.avg %>);
+<% end %>
