@@ -436,7 +436,7 @@
 		click			: undefined,
 		half			: false,
 		halfShow		: true,
-		hints			: ['bad', 'poor', 'regular', 'good', 'gorgeous'],
+		hints			: ['Deadly', 'When a relative thinks they can cook', 'Good job. Was actually tasty', "Someone's a Paul Hollywood in the making", "This may pop Mary Berry's cherry again!"],
 		iconRange		: undefined,
 		mouseover		: undefined,
 		noRatedMsg		: 'not rated yet',

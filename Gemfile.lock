@@ -284,6 +284,7 @@ GEM
       activesupport (>= 3)
       railties (>= 3)
     lumberjack (1.0.9)
+    magnific-popup-rails (0.9.9.1)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -604,6 +605,7 @@ DEPENDENCIES
   letsrate (~> 1.0.8)
   librato-rails
   lograge
+  magnific-popup-rails
   mail_view (~> 1.0.3)
   memcachier
   mercury-rails

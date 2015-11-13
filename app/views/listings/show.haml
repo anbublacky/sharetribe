@@ -72,7 +72,7 @@
           - text_with_line_breaks do
             = @listing.description
         #average_rating
-          = render partial: 'rate_listing', locals: {listing: @listing}
+          = render partial: 'rate_listing', locals: {listing: @listing}      
         - if logged_in?
           %p
             = "Your Rating : "

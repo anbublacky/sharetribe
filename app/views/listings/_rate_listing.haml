@@ -2,7 +2,29 @@
 - if listing.rate_average
   %h1
     - rate = Rate.where(rateable_id: listing.id, rateable_type: 'Listing', dimension: 'rate')
+    - user = rate.map {|rate| [Person	.find(rate.rater_id).username, rate.stars]}
     = "Total Rating :"
   = content_tag :div, "", "data-dimension" => "rate", :class => "star disable-star", "data-rating" => listing.rate_average.avg, "data-id" => listing.id, "data-classname" => "Listing", "data-star-count" => 5
   %span.no_of_reviews
-  = " from #{rate.count} reviews"
+  = "from"
+  = link_to "#{rate.count} reviews", "#test-modal", class: 'popup-modal'
+
+.html-code
+  / %a.popup-modal{:href => "#test-modal"} Open modal
+  #test-modal.mfp-hide.white-popup-block
+    %table.table
+      %thead
+        %tr
+          %th #
+          %th Username
+          %th Stars
+      %tbody
+        - user.each do |x|
+          %tr
+            %th{:scope => "row"} 1
+            %td 
+              = x[0]
+            %td 
+              = x[1]
+    %p
+      %a.popup-modal-dismiss{:href => "#"} Dismiss

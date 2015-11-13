@@ -21,7 +21,7 @@
 //= require jquery.fileupload-process
 //= require jquery.fileupload-validate
 //= require jquery.fileupload-image
-
+//= require magnific-popup
 //= require selectize-standalone.js
 //= require datepicker/bootstrap-datepicker.js
 
@@ -73,4 +73,5 @@
 //= require listing_form
 //= require jquery.raty
 //= require letsrate
+//= require magnific_popup
 //= require_self
