@@ -19,4 +19,19 @@ module RaterHelper
     "data-readonly" => readonly,
     "data-star-count" => star
   end
+
+  def rate_text(star)
+    case star
+    when 1
+        "Deadly"
+    when 2
+        "When a relative thinks they can cook"
+    when 3
+        "Good job. Was actually tasty"
+    when 4
+        "Someone's a Paul Hollywood in the making"
+    else
+        "This may pop Mary Berry's cherry again!"
+    end
+  end
 end
