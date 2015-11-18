@@ -17,6 +17,11 @@ GIT
     paypal-sdk-permissions (1.96.3)
       paypal-sdk-core (~> 0.3.0)
 
+PATH
+  remote: ./vendor/letsrate
+  specs:
+    letsrate (1.0.8)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -264,7 +269,6 @@ GEM
     kgio (2.8.1)
     launchy (2.1.2)
       addressable (~> 2.3)
-    letsrate (1.0.8)
     librato-metrics (1.5.1)
       aggregate (~> 0.2.2)
       faraday (~> 0.7)
@@ -602,7 +606,7 @@ DEPENDENCIES
   jwt (~> 1.5.1)
   kgio (~> 2.8.0)
   launchy
-  letsrate (~> 1.0.8)
+  letsrate!
   librato-rails
   lograge
   magnific-popup-rails

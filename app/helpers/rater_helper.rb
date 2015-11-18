@@ -20,6 +20,19 @@ module RaterHelper
     "data-star-count" => star
   end
 
+  def rate(stars, user_id, dimension=nil)
+    if can_rate? user_id, dimension
+      rates(dimension).build do |r|
+        r.stars = stars
+        r.rater_id = user_id
+        r.save!          
+      end      
+      update_rate_average(stars, dimension)
+    else
+      raise "User has already rated...................."
+    end
+  end 
+
   def rate_text(star)
     case star
     when 1

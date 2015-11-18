@@ -48,7 +48,7 @@ gem "memcachier"
 gem 'kgio', "~>2.8.0"
 gem 'thinking-sphinx', '~> 3.1.1'
 gem 'flying-sphinx', "~>1.2.0"
-gem 'letsrate', "~> 1.0.8"
+gem 'letsrate', :path => './vendor/letsrate'
 gem 'safe_attributes'
 gem "daemons"
 gem 'magnific-popup-rails'
