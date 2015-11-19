@@ -16,7 +16,8 @@
         %thead
           %tr
             %th Username
-            %th Stars
+            %th Rating
+            %th Description
         %tbody
           - user.each do |x|
             %tr
@@ -24,5 +25,7 @@
                 = x[0]
               %td 
                 = x[1]
+              %td
+                = rate_text(x[1].to_i)
       %p
         %a.popup-modal-dismiss{:href => "#"} Dismiss
