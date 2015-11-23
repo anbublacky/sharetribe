@@ -3,7 +3,15 @@
     %div
       -# Listing image
       = render :partial => "layouts/grid_item_listing_image", :locals => {:listing => listing, :modifier_class => ""}
-
+      - rate = Rate.where(rateable_id: listing.id, rateable_type: 'Listing', dimension: 'rate')
+      - user = rate.map {|rate| [Person .find(rate.rater_id).username, rate.stars]}
+      - listing1 = Listing.find(listing.id)
+      .home-fluid-thumbnail-grid-rating
+        = content_tag :div, "", "data-dimension" => "rate", :class => "star disable-star", "data-rating" => listing1.rate_average.avg, "data-id" => listing.id, "data-classname" => "Listing", "data-star-count" => 5
+        %span.no_of_reviews
+        = "from"
+        = link_to "#{rate.count} reviews", "#test-modal", class: 'popup-modal'
+        = render partial: 'listings/rate_list_popup', locals: {user: user}
       -# Listing author details
       .home-fluid-thumbnail-grid-author
         .home-fluid-thumbnail-grid-author-avatar

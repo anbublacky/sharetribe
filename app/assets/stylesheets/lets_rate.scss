@@ -22,3 +22,22 @@
 	margin: 40px auto;
 	position: relative;
 }
+.home-fluid-thumbnail-grid-rating {
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-color: #e8e8e8;
+	height: 26px;
+	padding: 5px;
+	position: relative;
+}
+.home-fluid-thumbnail-list-rating {
+	border-bottom-right-radius: 5px;
+	margin-left: 200px;
+	top: 50px;
+	height: 21px;
+	position: absolute;
+}

@@ -9,24 +9,4 @@
   = "from"
   = link_to "#{rate.count} reviews", "#test-modal", class: 'popup-modal'
 
-- if user
-  .html-code
-    / %a.popup-modal{:href => "#test-modal"} Open modal
-    #test-modal.mfp-hide.white-popup-block
-      %table.table
-        %thead
-          %tr
-            %th Username
-            %th Rating
-            %th Description
-        %tbody
-          - user.each do |x|
-            %tr
-              %td 
-                = x[0]
-              %td 
-                = x[1]
-              %td
-                = rate_text(x[1].to_i)
-      %p
-        %a.popup-modal-dismiss{:href => "#"} Dismiss
+= render partial: 'rate_list_popup', locals: {user: user}

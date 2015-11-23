@@ -32,6 +32,15 @@
             %a.home-share-type-link{:href => root_path(:transaction_type => shape_name_map[listing.listing_shape_id], :view => :list)}
               = icon_tag(listing.icon_name, ["icon-fix"])
               = shape_name(listing)
+    .home-fluid-thumbnail-list-rating
+      - rate = Rate.where(rateable_id: listing.id, rateable_type: 'Listing', dimension: 'rate')
+      - user = rate.map {|rate| [Person .find(rate.rater_id).username, rate.stars]}
+      - listing1 = Listing.find(listing.id)
+      = content_tag :div, "", "data-dimension" => "rate", :class => "star disable-star", "data-rating" => listing1.rate_average.avg, "data-id" => listing.id, "data-classname" => "Listing", "data-star-count" => 5
+      %span.no_of_reviews
+      = "from"
+      = link_to "#{rate.count} reviews", "#test-modal", class: 'popup-modal'
+      = render partial: 'listings/rate_list_popup', locals: {user: user}
 
     .home-list-author{:class => (listing.listing_images.size > 0 ? "home-list-author-with-listing-image" : "home-list-author-without-listing-image")}
       .home-list-avatar
