@@ -7,6 +7,6 @@
   = content_tag :div, "", "data-dimension" => "rate", :class => "star disable-star", "data-rating" => listing.rate_average.avg, "data-id" => listing.id, "data-classname" => "Listing", "data-star-count" => 5
   %span.no_of_reviews
   = "from"
-  = link_to "#{rate.count} reviews", "#test-modal", class: 'popup-modal'
+  = link_to "#{rate.count} reviews", "#test-modal-#{listing.id}", class: 'popup-modal'
 
-= render partial: 'rate_list_popup', locals: {user: user}
+= render partial: 'listings/rate_list_popup', locals: {user: user, listing: listing}

@@ -39,8 +39,8 @@
       = content_tag :div, "", "data-dimension" => "rate", :class => "star disable-star", "data-rating" => listing1.rate_average.avg, "data-id" => listing.id, "data-classname" => "Listing", "data-star-count" => 5
       %span.no_of_reviews
       = "from"
-      = link_to "#{rate.count} reviews", "#test-modal", class: 'popup-modal'
-      = render partial: 'listings/rate_list_popup', locals: {user: user}
+      = link_to "#{rate.count} reviews", "#test-modal-#{listing1.id}", class: 'popup-modal'
+      = render partial: 'listings/rate_list_popup', locals: {user: user, listing: listing1}
 
     .home-list-author{:class => (listing.listing_images.size > 0 ? "home-list-author-with-listing-image" : "home-list-author-without-listing-image")}
       .home-list-avatar

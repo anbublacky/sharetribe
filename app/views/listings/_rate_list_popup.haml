@@ -1,7 +1,7 @@
 - if user
   .html-code
     / %a.popup-modal{:href => "#test-modal"} Open modal
-    #test-modal.mfp-hide.white-popup-block
+    .mfp-hide.white-popup-block{id: "test-modal-#{listing.id}"}
       %table.table
         %thead
           %tr
